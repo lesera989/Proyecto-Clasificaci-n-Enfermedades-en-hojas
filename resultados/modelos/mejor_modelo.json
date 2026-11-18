@@ -1,0 +1,7 @@
+{
+    "modelo": "mobilenetv2",
+    "tipo": "segmentada",
+    "ruta_modelo": "C:\\Users\\lesly\\OneDrive\\Escritorio\\Proyecto_Cafe\\resultados\\modelos\\mobilenetv2_segmentada.keras",
+    "val_accuracy": 0.5769230723381042,
+    "val_loss": 1.0898774862289429
+}
