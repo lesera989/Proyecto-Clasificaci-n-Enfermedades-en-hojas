@@ -28,28 +28,3 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Artefactos generados por el entrenamiento
-outputs/
-resultados/
-
-# Pesos y modelos generados
-*.pth
-*.pt
-*.keras
-*.h5
-*.onnx
-*.pb
-
-# Conjunto de datos e imágenes generadas
-/data/
-dataset/
-segmentadas/
-mascaras/
-mascaras_predichas/
-imagenes/
-
-# TensorBoard y ejecutores de ML
-runs/
-wandb/
-mlruns/
-lightning_logs/

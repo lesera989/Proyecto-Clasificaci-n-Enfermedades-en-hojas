@@ -1,0 +1,7 @@
+modelo,tipo,val_accuracy,val_loss,ruta_modelo
+cnn,original,0.19871795177459717,1.7068970203399658,C:\Users\lesly\OneDrive\Escritorio\Proyecto_Cafe\resultados\modelos\cnn_original.keras
+cnn,segmentada,0.5320512652397156,1.2781709432601929,C:\Users\lesly\OneDrive\Escritorio\Proyecto_Cafe\resultados\modelos\cnn_segmentada.keras
+mobilenetv2,original,0.4871794879436493,1.303230881690979,C:\Users\lesly\OneDrive\Escritorio\Proyecto_Cafe\resultados\modelos\mobilenetv2_original.keras
+mobilenetv2,segmentada,0.5769230723381042,1.0898774862289429,C:\Users\lesly\OneDrive\Escritorio\Proyecto_Cafe\resultados\modelos\mobilenetv2_segmentada.keras
+efficientnetb0,original,0.5320512652397156,1.2906908988952637,C:\Users\lesly\OneDrive\Escritorio\Proyecto_Cafe\resultados\modelos\efficientnetb0_original.keras
+efficientnetb0,segmentada,0.5384615659713745,1.1501901149749756,C:\Users\lesly\OneDrive\Escritorio\Proyecto_Cafe\resultados\modelos\efficientnetb0_segmentada.keras

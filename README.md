@@ -237,7 +237,7 @@ Los resultados se almacenan en `resultados/graficas/`.
 - Python 3.10 o 3.11 recomendado.
 - 8 GB de RAM como mínimo; 16 GB recomendado para entrenamiento.
 - Una GPU compatible con TensorFlow acelera el entrenamiento, pero no es obligatoria.
-- Descargar y extraer el dataset RoCoLe.
+- Descargar y extraer el dataset RoCoLe únicamente si se desea repetir la preparación o el entrenamiento.
 
 ### 2. Crear un entorno aislado
 
@@ -259,11 +259,71 @@ pip install -r requirements.txt
 
 ### 3. Preparar las rutas
 
-Edita `config.py` y apunta `BASE` a la carpeta que contiene `photos/` y `annotations/` antes de ejecutar `python main.py preparar`.
+Esta ruta solo es necesaria para preparar o volver a entrenar el proyecto con el dataset original RoCoLe. No se necesita el dataset para usar los modelos ya entrenados.
 
-Si solo quieres utilizar la interfaz y ya tienes los modelos entrenados, no es necesario descargar el dataset.
+El repositorio puede funcionar en otra máquina sin cambiar las rutas de los modelos, porque `config.py` construye `ROOT` y `MODELS` a partir de la ubicación real del proyecto.
+
+Para repetir el entrenamiento en cualquier equipo, reemplaza la ruta absoluta de `BASE` por una ruta relativa o una variable de entorno:
+
+```python
+import os
+from pathlib import Path
+
+BASE = Path(os.environ.get(
+    "ROCOLE_DIR",
+    Path(__file__).resolve().parent / "data" / "rocole"
+))
+```
+
+Coloca el dataset dentro del proyecto, si usas la ruta relativa:
+
+```text
+data/rocole/
+├── photos/
+└── annotations/
+    ├── RoCoLe-classes.xlsx
+    └── RoCoLE-coco.json
+```
+
+También puedes indicar una ruta externa desde una terminal:
+
+```powershell
+$env:ROCOLE_DIR="C:\Ruta\Al\RoCoLe"
+python main.py preparar
+```
+
+En Linux o WSL:
+
+```bash
+export ROCOLE_DIR="/ruta/al/rocole"
+python main.py preparar
+```
 
 ## Uso
+
+### Ejecutar en otra máquina sin volver a entrenar
+
+Cuando clones el repositorio, confirma que existen los modelos ya entrenados:
+
+```text
+resultados/modelos/unet.keras
+resultados/modelos/mejor_modelo.json
+resultados/modelos/<clasificador>.keras
+```
+
+El clasificador exacto debe coincidir con `mejor_modelo.json`. En la configuración actual corresponde a `mobilenetv2_segmentada.keras`.
+
+Instala las dependencias una sola vez y ejecuta solamente la interfaz:
+
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+python main.py interfaz
+```
+
+No necesitas descargar el dataset RoCoLe, preparar imágenes, generar máscaras, entrenar U-Net o volver a entrenar los clasificadores.
+
+### Uso general
 
 Ejecuta la interfaz desde la raíz del proyecto:
 
