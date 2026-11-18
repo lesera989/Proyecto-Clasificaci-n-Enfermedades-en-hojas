@@ -1,0 +1,55 @@
+# Entornos virtuales y configuración local
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+
+# Cachés y archivos temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Registros y archivos temporales
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Artefactos generados por el entrenamiento
+outputs/
+resultados/
+
+# Pesos y modelos generados
+*.pth
+*.pt
+*.keras
+*.h5
+*.onnx
+*.pb
+
+# Conjunto de datos e imágenes generadas
+/data/
+dataset/
+segmentadas/
+mascaras/
+mascaras_predichas/
+imagenes/
+
+# TensorBoard y ejecutores de ML
+runs/
+wandb/
+mlruns/
+lightning_logs/
